@@ -10,3 +10,9 @@ let greeting = "Welcome back, "
 let welcomeEL = document.getElementById("welcome-el")
 
 welcomeEL.innerText = greeting + name
+
+// Add an emoji to the end! 👋
+// WRITE YOUR CODE BELOW HERE
+// HINT: count = count + 1
+
+welcomeEL.innerText = welcomeEL.innerText + "👋"
