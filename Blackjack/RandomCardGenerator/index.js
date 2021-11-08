@@ -1,5 +1,10 @@
-let firstCard = 10
-let secondCard = 4
+// WE ARE CALLING THE FUNCTION BEFORE IT HAS BEEN CREATED IN OUR CODE.
+// FUNCTION DECLARATIONS ARE "HOISTED" to line 1!!!
+
+// 2. Use getRandomCard() to set the values of firstCard and secondCard
+
+let firstCard = getRandomCard()
+let secondCard = getRandomCard()
 let sum = firstCard + secondCard
 
 //Array of cards
@@ -16,7 +21,9 @@ let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.querySelector("#cards-el")
 
 // Create a function, getRandomCard(), that always returns the number 5
-
+function getRandomCard() {
+    return 5
+}
 
 
 // Function calls renderGame()
@@ -48,7 +55,7 @@ function renderGame() {
 
 function newCard() {
     console.log("Drawing a new card from the deck!")
-    let card = 6
+    let card = getRandomCard()
     sum += card
 
     // Push the card to the cards array
