@@ -20,9 +20,18 @@ let sumEl = document.querySelector("#sum-el")
 
 let cardsEl = document.querySelector("#cards-el")
 
-// Create a function, getRandomCard(), that always returns the number 5
+// Make this function return a random number between 1 and 13
 function getRandomCard() {
-    return 5
+    // if 1     -> return 11
+    // if 11-13 -> return 10
+    let value = Math.floor(Math.random()*13)+1
+    if (value === 1) {
+        return 11
+    } else if (value > 10) {
+        return 10
+    } else {
+        return value
+    }
 }
 
 
