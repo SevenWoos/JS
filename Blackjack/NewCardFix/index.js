@@ -62,12 +62,19 @@ function renderGame() {
 // We want a stopping condition such that you can draw new cards once you bust.
 
 // Only allow the player to get a new card if she IS alive and does NOT have Blackjack
-function newCard() {
-    console.log("Drawing a new card from the deck!")
-    let card = getRandomCard()
-    sum += card
 
-    cards.push(card)
-    
-    renderGame()
+function newCard() {
+
+    if (isAlive === true && hasBlackJack === false) {
+        console.log("Drawing a new card from the deck!")
+        let card = getRandomCard()
+        sum += card
+
+        cards.push(card)
+        
+        renderGame()
+    } else {
+        
+    }
+
 }
