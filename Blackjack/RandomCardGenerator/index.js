@@ -15,6 +15,9 @@ let sumEl = document.querySelector("#sum-el")
 
 let cardsEl = document.querySelector("#cards-el")
 
+// Create a function, getRandomCard(), that always returns the number 5
+
+
 
 // Function calls renderGame()
 function startGame() {
