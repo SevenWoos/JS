@@ -15,11 +15,20 @@ let cardsEl = document.querySelector("#cards-el")
 // let playerName = "Per"
 // let playerChips = 145
 
+// 2. Create the player object. Give it two keys, name and chips, and set their values
 let Player = {
-    name: "Per", 
-    chips: 145
+    name: "Sven", 
+    chips: 200,
+    sayHello: function() {
+        console.log("Ni hao!")
+    }
 }
 
+Player.sayHello()
+
+// 3. Grab ahold of the player-el paragraph and store it in a variable called playerEl
+
+// 4. Render the player's name and chips in playerEl
 let playerEl = document.getElementById("player-el")
 playerEl.textContent = Player.name + ": $" + Player.chips
 
