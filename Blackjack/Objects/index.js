@@ -11,6 +11,18 @@ let sumEl = document.querySelector("#sum-el")
 
 let cardsEl = document.querySelector("#cards-el")
 
+// Let's create a Player object to contain both these variables (playerName, playerChips)
+// let playerName = "Per"
+// let playerChips = 145
+
+let Player = {
+    name: "Per", 
+    chips: 145
+}
+
+let playerEl = document.getElementById("player-el")
+playerEl.textContent = Player.name + ": $" + Player.chips
+
 function getRandomCard() {
     // if 1     -> return 11
     // if 11-13 -> return 10
@@ -74,4 +86,5 @@ function newCard() {
         
         renderGame()
     } 
+
 }
