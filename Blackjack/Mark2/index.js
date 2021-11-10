@@ -1,6 +1,9 @@
 let sum = 0
 let cards = []
 
+let dealer_sum = 0
+let dealer_cards = []
+
 let hasBlackJack = false
 let isAlive = false
 let message = " "
@@ -11,13 +14,8 @@ let sumEl = document.querySelector("#sum-el")
 
 let cardsEl = document.querySelector("#cards-el")
 
-// Let's create a Player object to contain both these variables (playerName, playerChips)
-// let playerName = "Per"
-// let playerChips = 145
-
-// 2. Create the player object. Give it two keys, name and chips, and set their values
 let Player = {
-    name: "Sven", 
+    name: "You", 
     chips: 200,
     sayHello: function() {
         console.log("Ni hao!")
@@ -26,11 +24,16 @@ let Player = {
 
 Player.sayHello()
 
-// 3. Grab ahold of the player-el paragraph and store it in a variable called playerEl
-
-// 4. Render the player's name and chips in playerEl
 let playerEl = document.getElementById("player-el")
 playerEl.textContent = Player.name + ": $" + Player.chips
+
+let Dealer = {
+    name: "Dealer", 
+    chips: 200
+}
+
+let dealerEl = document.getElementById("dealer-el")
+dealerEl.textContent = Dealer.name + ": $" + Dealer.chips
 
 function getRandomCard() {
     // if 1     -> return 11
@@ -73,6 +76,10 @@ function renderGame() {
     } else if (sum === 21) {
         message = "Wohoo! You've got Blackjack!"
         hasBlackJack = true
+
+        Player.chips += 1000
+        playerEl.textContent = Player.name + ": $" + Player.chips
+
     } else {
         message = "You're out of the game!"
         isAlive = false
@@ -98,10 +105,16 @@ function newCard() {
 
 }
 
-// Function that resets the game without  having to refresh the page
+// Function that resets the game without having to refresh the page
 function restartGame() {
     sum = 0
     sumEl.textContent = "Sum: " 
     cardsEl.textContent = "Cards: "
     cards = []
+    hasBlackJack = false
+
+    message = "Do you want to draw a new card?"
+    messageEl.textContent = message
+
+    startGame()
 }
